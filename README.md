@@ -12,3 +12,4 @@ Demo project to test hooks for ci/auto-deploys
 9. Dry run...
 10. Quick test
 11. Running command
+12. Checking for deploy path instead
