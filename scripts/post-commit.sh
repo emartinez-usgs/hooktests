@@ -22,37 +22,42 @@
 
 ## Configuration
 
-#
-# config file provides:
-#  - deployPath
-#  - deployHosts
-#  - deployUser
-#
-source ".git/hooks/config.sh";
+configFile=".git/hooks/post-commit.config";
+remote="origin";
+branch="master";
 
-
-## Usage
-if [[ -z "$deployPath" || -z "$deployHosts" || -z "$deployUser" ]]; then
-  echo "Incomplete configuration file. Check config.sh.";
+if [ ! -f $configFile ]; then
+  echo "Configuration file does not exist.";
   exit -1;
 fi
 
-remote="origin";
-currentBranch=`git branch | egrep '\*' | awk '{print $2}'`;
+# config file provides:
+#  - deployHosts
+#  - deployPath
+#  - deployUser
+source $configFile;
 
-# Only auto-deploy master branch...
-if [ "$currentBranch" != "master" ]; then
+
+## Usage
+
+if [[ -z "$deployHosts" || -z "$deployPath" || -z "$deployUser" ]]; then
+  echo "Incomplete configuration file. Check config.sh.";
+  exit -2;
+fi
+
+if [ `git branch | egrep '\*' | awk '{print $2}'` != "$branch" ]; then
+  echo "Current branch is $branch. Nothing done.";
   exit 0;
 fi
 
 
 ## Script
 
-git push $remote master;
+git push $remote $branch;
 
 command="cd $deployPath";
-command="$command && git checkout master";
-command="$command && git pull $remote master";
+command="$command && git checkout $branch";
+command="$command && git pull $remote $branch";
 
 for server in $deployHosts; do
   ssh -l $deployUser $server "($command)";
