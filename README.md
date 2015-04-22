@@ -14,3 +14,4 @@ Demo project to test hooks for ci/auto-deploys
 11. Running command
 12. Checking for deploy path instead
 13. ... with config
+14. ... and actually using it!
