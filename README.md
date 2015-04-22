@@ -8,3 +8,4 @@ Demo project to test hooks for ci/auto-deploys
 5. Debugging
 6. More debugging.
 7. Fixed typo
+8. And actually using it...
