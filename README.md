@@ -1,17 +1,18 @@
-# hooktests
-Demo project to test hooks for ci/auto-deploys
+hooktests
+=========
 
-1. Starting over...
-2. No sym-link
-3. Fixing remote url
-4. A quick test
-5. Debugging
-6. More debugging.
-7. Fixed typo
-8. And actually using it...
-9. Dry run...
-10. Quick test
-11. Running command
-12. Checking for deploy path instead
-13. ... with config
-14. ... and actually using it!
+TODO
+
+Installation Instructions
+-------------------------
+
+### Static Content System
+TODO
+
+
+### Integration System
+TODO
+
+
+### Production System
+TODO
