@@ -1,0 +1,11 @@
+# Comma-separated string listing the fully-qualified domain name of each
+# integration system in the auto-deployment scheme.
+deployHosts='host1.fqdn.tld host2.fqdn.tld';
+
+# Absolute file system path to the project root directory on the integration
+# system.
+deployPath='/some/path/project';
+
+# The name of the system user that will perform SSH and GIT commands on the
+# integration system.
+deployUser='me';
