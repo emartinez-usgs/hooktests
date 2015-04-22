@@ -6,3 +6,4 @@ Demo project to test hooks for ci/auto-deploys
 3. Fixing remote url
 4. A quick test
 5. Debugging
+6. More debugging.
